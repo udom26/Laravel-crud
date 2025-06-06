@@ -21,6 +21,8 @@ class Post extends Model
         'updated_at' => 'datetime',
     ];
 
-    
-
+    public function flights()
+    {
+        return $this->hasMany(\App\Models\Flight::class, 'airport_id');
+    }
 }

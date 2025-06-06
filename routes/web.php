@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\FlightController;
 
 
 
@@ -23,7 +24,15 @@ Route::middleware([
     Route::get('/edit/{post}', [PostController::class, 'edit'])->name('edit');
     Route::put('/update/{post}', [PostController::class, 'update'])->name('update');
     Route::delete('/destroy/{post}', [PostController::class, 'destroy'])->name('destroy');
-    Route::get('/books', [PostController::class, 'table'])->name('books');
+
+    // Route สำหรับจัดการข้อมูลเที่ยวบิน
+    Route::get('/flights', [FlightController::class, 'index'])->name('flights.index');
+    Route::get('/flights/create', [FlightController::class, 'create'])->name('flights.create');
+    Route::post('/flights', [FlightController::class, 'store'])->name('flights.store');
+    Route::get('/flights/{flight}', [FlightController::class, 'show'])->name('flights.show');
+    Route::get('/flights/{flight}/edit', [FlightController::class, 'edit'])->name('flights.edit');
+    Route::put('/flights/{flight}', [FlightController::class, 'update'])->name('flights.update');
+    Route::delete('/flights/{flight}', [FlightController::class, 'destroy'])->name('flights.destroy');
     
     // เมื่อล็อกอินแล้วเข้าหน้า index ทันที
     Route::get('/dashboard', function () {

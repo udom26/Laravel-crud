@@ -8,16 +8,16 @@
             <form action="{{ route('store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="title" class="form-label fw-bold">Title</label>
+                    <label for="title" class="form-label fw-bold">Airport Name</label>
                     <input type="text" class="form-control" id="title" name="title" required>
                 </div>
                 <div class="mb-3">
-                    <label for="content" class="form-label fw-bold">Content</label>
+                    <label for="content" class="form-label fw-bold">Detail</label>
                     <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <a href="{{ route('index') }}" class="btn btn-secondary">Back to All Posts</a>
-                    <button type="submit" class="btn btn-primary">Create Post</button>
+                    <a href="{{ route('index') }}" class="btn btn-secondary">Back to All Airport</a>
+                    <button type="submit" class="btn btn-primary">Add Airport</button>
                 </div>
             </form>
         </div>

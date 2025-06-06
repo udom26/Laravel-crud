@@ -78,7 +78,13 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        // ตรวจสอบว่ามี Flight ใช้ post นี้อยู่หรือไม่
+        if ($post->flights()->exists()) {
+            return redirect()->route('index')->with('error', 'Cannot be deleted because the data is in use.');
+        }
+
+        $post->delete();
+        return redirect()->route('index')->with('success', 'Ariport deleted successfully!');
     }
     public function table()
     {
