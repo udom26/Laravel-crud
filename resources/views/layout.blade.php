@@ -14,7 +14,7 @@
         <div class="ms-auto d-flex align-items-center">
             <a href="{{ route('index') }}" class="btn btn-outline-primary me-2">Airports</a>
             <a href="{{ route('flights.index') }}" class="btn btn-outline-success me-2">Flights</a>
-            <a href="{{ route('flights.index') }}" class="btn btn-outline-warning me-2">Tickets</a>
+            <a href="{{ route('tickets.index') }}" class="btn btn-outline-warning me-2">Tickets</a>
             <form action="{{ route('logout') }}" method="POST" class="d-inline">
                 @csrf
                 <button type="submit" class="btn btn-danger">Logout</button>
